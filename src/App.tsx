@@ -13,6 +13,8 @@ import SchedulePage from "./pages/SchedulePage";
 import GalleryPage from "./pages/GalleryPage";
 import RegisterPage from "./pages/RegisterPage";
 import ContactPage from "./pages/ContactPage";
+import EnglishAssessmentPage from "./pages/EnglishAssessmentPage";
+import AssessmentDashboard from "./pages/AssessmentDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,8 @@ const App = () => (
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/assessment" element={<EnglishAssessmentPage />} />
+              <Route path="/assessment/dashboard" element={<AssessmentDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

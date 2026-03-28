@@ -16,6 +16,7 @@ const Navbar = () => {
     { label: t.nav.activities[lang], path: '/activities' },
     { label: t.nav.schedule[lang], path: '/schedule' },
     { label: t.nav.gallery[lang], path: '/gallery' },
+    { label: t.nav.assessment[lang], path: '/assessment' },
     { label: t.nav.register[lang], path: '/register' },
     { label: t.nav.contact[lang], path: '/contact' },
   ];

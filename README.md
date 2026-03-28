@@ -50,6 +50,18 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## English Assessment (AI-powered)
+
+The app includes an interactive English assessment at **/assessment**: voice input, AI conversation, NLP-style scoring, and a results dashboard.
+
+- **Frontend:** React pages and components under `src/pages/` and `src/components/assessment/`.
+- **Backend:** Node/Express in `server/`. Run from project root:
+  ```sh
+  cd server && npm install && OPENAI_API_KEY=sk-your-key npm start
+  ```
+  The API runs on port 3001. Vite proxies `/api` to it in development.
+- **Docs:** See [docs/ASSESSMENT_PROMPT.md](docs/ASSESSMENT_PROMPT.md) for AI prompt design, scoring, voice flow, gamification, and safe deployment (API key must stay on the server).
+
 ## What technologies are used for this project?
 
 This project is built with:

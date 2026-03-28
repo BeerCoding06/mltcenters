@@ -11,6 +11,14 @@ export const translations = {
     gallery: { en: "Gallery", th: "แกลเลอรี" },
     register: { en: "Register", th: "ลงทะเบียน" },
     contact: { en: "Contact", th: "ติดต่อ" },
+    assessment: { en: "Chat English", th: "คุยภาษาอังกฤษ" },
+  },
+  assessmentPage: {
+    title: { en: "Chat in English", th: "คุยภาษาอังกฤษ" },
+    subtitle: {
+      en: "Have a normal greeting chat—say hi, introduce yourself, small talk. We'll estimate your level from the conversation.",
+      th: "คุยทักทายปกติเป็นภาษาอังกฤษ—ทักทาย แนะนำตัว คุยเล่นนิดหน่อย ระบบจะประเมินระดับจากบทสนทนา",
+    },
   },
   hero: {
     headline: {
@@ -190,7 +198,7 @@ export const translations = {
         title: { en: "Present & Shine", th: "นำเสนออย่างมั่นใจ" },
         desc: {
           en: "Build confidence presenting in multiple languages.",
-          th: "สร้างความมั่นใจในการนำเสนอหลายภาษา",
+          th: "สร้างความมั่นใจในการนำเสนอหลายภาษา ",
         },
       },
     ],
