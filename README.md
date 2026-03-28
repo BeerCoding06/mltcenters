@@ -1,70 +1,34 @@
-# Welcome to your Lovable project
+# MLTCENTERS Workshop
 
-## Project info
+เว็บแอปและเวิร์กช็อปเรียนภาษาผ่านเทคโนโลยี (React + Vite)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## รันโปรเจกต์ในเครื่อง
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+ต้องมี Node.js (แนะนำ 18+) และ npm — [ติดตั้งด้วย nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd mltcenters
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## English Assessment (AI)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+แบบทดสอบภาษาอังกฤษแบบโต้ตอบที่ **/assessment**: เสียงพูด, บทสนทนา AI, คะแนนแบบ NLP และหน้าสรุปผล
 
-**Use GitHub Codespaces**
+- **Frontend:** `src/pages/` และ `src/components/assessment/`
+- **Backend:** Express ใน `server/` — จาก root ของโปรเจกต์:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## English Assessment (AI-powered)
-
-The app includes an interactive English assessment at **/assessment**: voice input, AI conversation, NLP-style scoring, and a results dashboard.
-
-- **Frontend:** React pages and components under `src/pages/` and `src/components/assessment/`.
-- **Backend:** Node/Express in `server/`. Run from project root:
   ```sh
   cd server && npm install && OPENAI_API_KEY=sk-your-key npm start
   ```
-  The API runs on port 3001. Vite proxies `/api` to it in development.
-- **Docs:** See [docs/ASSESSMENT_PROMPT.md](docs/ASSESSMENT_PROMPT.md) for AI prompt design, scoring, voice flow, gamification, and safe deployment (API key must stay on the server).
 
-## What technologies are used for this project?
+  API ใช้พอร์ต 3001; ในโหมด dev Vite จะ proxy `/api` ไปที่เซิร์ฟเวอร์นี้
 
-This project is built with:
+- **เอกสาร:** [docs/ASSESSMENT_PROMPT.md](docs/ASSESSMENT_PROMPT.md)
+
+## เทคโนโลยีหลัก
 
 - Vite
 - TypeScript
@@ -72,15 +36,9 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Build และ preview
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-# mltcenters
+```sh
+npm run build
+npm run preview
+```
