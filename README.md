@@ -45,7 +45,7 @@ npm run preview
 
 ## Docker / Dockploy
 
-รูทโปรเจกต์มี `Dockerfile` — build แอป Vite แล้วรัน Express ที่เสิร์ฟทั้ง static จาก `dist` และ `POST /api/assess` บนพอร์ตเดียวกัน (ฝั่งเว็บเรียก `/api` แบบ relative ได้เลย)
+รูทโปรเจกต์มี `Dockerfile` และ **`Dockerfile.prod`** (เนื้อหาเดียวกัน — Dockploy มักชี้ไฟล์หลัง) — build แอป Vite แล้วรัน Express ที่เสิร์ฟทั้ง static จาก `dist` และ `POST /api/assess` บนพอร์ตเดียวกัน
 
 ```sh
 docker build -t mltcenters .
