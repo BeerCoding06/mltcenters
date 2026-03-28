@@ -1,11 +1,17 @@
 /**
  * Backend proxy for OpenAI – keeps API key server-side.
  * Run: npm install && OPENAI_API_KEY=sk-... npm start
- * Listens on http://localhost:3001
+ * Dev: listens on PORT (default 3000). With ../dist present, also serves the Vite SPA.
  */
+import path from 'path';
+import { existsSync } from 'fs';
+import { fileURLToPath } from 'url';
 import express from 'express';
 import cors from 'cors';
 import OpenAI from 'openai';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distPath = path.join(__dirname, '../dist');
 
 const app = express();
 app.use(cors({ origin: true }));
@@ -49,5 +55,16 @@ app.post('/api/assess', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`API running at http://localhost:${PORT}`));
+if (existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 3000;
+const host = process.env.HOST || '0.0.0.0';
+app.listen(PORT, host, () => {
+  console.log(`Server listening on http://${host}:${PORT}`);
+});

@@ -24,7 +24,7 @@ npm run dev
   cd server && npm install && OPENAI_API_KEY=sk-your-key npm start
   ```
 
-  API ใช้พอร์ต 3001; ในโหมด dev Vite จะ proxy `/api` ไปที่เซิร์ฟเวอร์นี้
+  API ใช้พอร์ต 3000; ในโหมด dev Vite จะ proxy `/api` ไปที่เซิร์ฟเวอร์นี้
 
 - **เอกสาร:** [docs/ASSESSMENT_PROMPT.md](docs/ASSESSMENT_PROMPT.md)
 
@@ -42,3 +42,14 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## Docker / Dockploy
+
+รูทโปรเจกต์มี `Dockerfile` — build แอป Vite แล้วรัน Express ที่เสิร์ฟทั้ง static จาก `dist` และ `POST /api/assess` บนพอร์ตเดียวกัน (ฝั่งเว็บเรียก `/api` แบบ relative ได้เลย)
+
+```sh
+docker build -t mltcenters .
+docker run -p 3000:3000 -e OPENAI_API_KEY=sk-... mltcenters
+```
+
+บน **Dockploy**: ผูก repo แล้วให้ใช้ Dockerfile ที่รูท, ตั้งค่า environment **`OPENAI_API_KEY`** (บังคับสำหรับ assessment) และถ้าแพลตฟอร์มกำหนดพอร์ต ให้ตั้ง **`PORT`** ให้ตรงกับที่ reverse proxy ชี้เข้ามา (ค่าเริ่มต้นของคอนเทนเนอร์คือ `3000`)
