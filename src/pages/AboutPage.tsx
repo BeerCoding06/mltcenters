@@ -5,7 +5,7 @@ import aboutWorkshopImg from '@/assets/img01.jpg';
 
 const aboutImgAlt = {
   en: 'Workshop activity: students learning with technology',
-  th: 'บรรยากาศกิจกรรมอบรม: นักเรียนเรียนรู้ด้วยเทคโนโลยี',
+  th: 'บรรยากาศกิจกรรมอบรม: นักเรียนเรียนรู้ด้วยเทคโนโลยีสมัยใหม่',
 };
 
 const AboutPage = () => {
